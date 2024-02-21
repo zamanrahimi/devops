@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-app-deployment
+spec:
+  replicas: 3  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: php-app1
+  template:
+    metadata:
+      labels:
+        app: php-app1
+    spec:
+      containers:
+        - name: php-app1
+          image: zamanrahimi1368/php_app:v1.4  # Replace with your actual image and tag
+          ports:
+            - containerPort: 80  # Replace with your application's port
