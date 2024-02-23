@@ -39,4 +39,6 @@ for command in commands:
         print(f"----------------Command {count} ------------------------")
         count += 1
     except sb.CalledProcessError as e:
-        print(f"The error is {e}")
+        print(
+            f" {color.Colors.RED} The error for command {command} is {e} {color.Colors.RESET}"
+        )
