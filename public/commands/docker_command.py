@@ -5,17 +5,18 @@ import yaml
 
 import os
 # Get the absolute path to the current script
-script_directory = os.path.dirname(os.path.abspath(__file__))
+two_directory_back = os.path.dirname(os.path.abspath(__file__))
 # Construct the relative path to the yaml file
-yaml_file_path = os.path.join(script_directory, "../../php/project_root/kubernetes/config.yaml")
+config_file_path = os.path.join(two_directory_back, "../../php/project_root/kubernetes/config.yaml")
+php_docker_file_path = os.path.join(two_directory_back, "../../php/project_root/php")
 
-
+# docker build -t zamanrahimi1368/php-app2:v2.9 ../../php/project_root/php
 
 
 # read variable from yaml file
 # it should not be like php/project_root/kubernetes/config.yaml. suppose 
 # it is runn from apply.py directory 
-with open(f"{yaml_file_path}", "r") as t:
+with open(f"{config_file_path}", "r") as t:
     data = yaml.safe_load(t)
     tag = data["data"]["IMAGE_TAG"]
 
