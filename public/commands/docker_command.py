@@ -37,7 +37,7 @@ for command in commands:
     try:
         sb.run(command, check=True, shell=True)
         print(f"{colors.Colors.GREEN}----------------Docker Commands------------------------{colors.Colors.RESET}")
-        print(f" ({command}) exected successfully \n")
+        print(f"{colors.Colors.GREEN} ({command}) exected successfully {colors.Colors.RESET} \n")
 
     except sb.CalledProcessError as e:
         print(f"{colors.Colors.RED}----------------Docker Commands------------------------{colors.Colors.RESET}")
