@@ -29,24 +29,22 @@ commands = [
     "python public/commands/git_command.py",
 ]
 
-count = 1
+
 for command in commands:
     try:
         # execute main command
         sb.run(command, check=True, shell=True)
         print(
-            f"{color.Colors.BLUE}----------------Command {count} ------------------------ {color.Colors.RESET}"
+            f"{color.Colors.BLUE}----------------Command {command} ------------------------ {color.Colors.RESET}"
         )
 
         print(
             f" {color.Colors.GREEN} ( {command} ) exected successfully {color.Colors.RESET} \n"
         )
 
-        count += 1
-
     except sb.CalledProcessError as e:
         print(
-            f"{color.Colors.RED}----------------Command {count} ------------------------ {color.Colors.RESET}"
+            f"{color.Colors.RED}----------------Command {command} ------------------------ {color.Colors.RESET}"
         )
         print(
             f" {color.Colors.RED} The error for command ( {command} ) is {e} {color.Colors.RESET}"

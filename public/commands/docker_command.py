@@ -26,7 +26,8 @@ from dependencies import colors
 with open(f"{config_file_path}", "r") as t:
     data = yaml.safe_load(t)
     tag = data["data"]["IMAGE_TAG"]
-print(f"{colors.Colors.GREEN}----------------Docker Commands------------------------{colors.Colors.RESET}")
+    
+print(f"{colors.Colors.BLUE}----------------Docker Part------------------------{colors.Colors.RESET}")
 commands = [
     # list of commands
     f"docker build -t zamanrahimi1368/php-app2:{tag} {php_docker_file_path}",
@@ -36,9 +37,9 @@ commands = [
 for command in commands:
     try:
         sb.run(command, check=True, shell=True)
-        print(f"{colors.Colors.GREEN}----------------Docker Commands------------------------{colors.Colors.RESET}")
+        print(f"{colors.Colors.GREEN}----------------Docker success commends------------------------{colors.Colors.RESET}")
         print(f"{colors.Colors.GREEN} ({command}) exected successfully {colors.Colors.RESET} \n")
 
     except sb.CalledProcessError as e:
-        print(f"{colors.Colors.RED}----------------Docker Commands------------------------{colors.Colors.RESET}")
+        print(f"{colors.Colors.RED}----------------Docker failed commands------------------------{colors.Colors.RESET}")
         print(f"{colors.Colors.RED} The error is {e} {colors.Colors.RESET}")
