@@ -11,7 +11,7 @@ commands = [
     # Testing
     "black apply.py",
     # Docker
-    f"docker build -t zamanrahimi1368/php-app2:{tag} ./php",
+    f"docker build -t zamanrahimi1368/php-app2:{tag} ./app",
     f"docker push zamanrahimi1368/php-app2:{tag}",
     # Kubernetes
     "kubectl apply -f kubernetes/config.yaml",
@@ -21,7 +21,7 @@ commands = [
     "kubectl apply -f kubernetes/persistent-volume.yaml",
     "kubectl apply -f kubernetes/php-service.yaml",
     # Github
-    "python ../../git_commands.py",
+    "python ../../public/commands/git_commands.py",
 ]
 for command in commands:
     try:
