@@ -4,6 +4,7 @@ import yaml
 # import color module
 import public.dependencies.colors as color
 
+
 # print(f"{color.Colors.RED}This is red text.{color.Colors.RESET}")
 # exit()
 
@@ -26,7 +27,7 @@ commands = [
     "kubectl apply -f php/project_root/kubernetes/persistent-volume.yaml",
     "kubectl apply -f php/project_root/kubernetes/php-service.yaml",
     # Github
-    "python git_commands.py",
+    "python public/commands/git_commands.py",
 ]
 
 count = 1
@@ -45,6 +46,9 @@ for command in commands:
         count += 1
 
     except sb.CalledProcessError as e:
+        print(
+            f"{color.Colors.RED}----------------Command {count} ------------------------ {color.Colors.RESET}"
+        )
         print(
             f" {color.Colors.RED} The error for command ( {command} ) is {e} {color.Colors.RESET}"
         )
