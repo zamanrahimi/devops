@@ -17,8 +17,7 @@ commands = [
     # Testing
     "black apply.py",
     # Docker
-    f"docker build -t zamanrahimi1368/php-app2:{tag} ./php/project_root/php",
-    f"docker push zamanrahimi1368/php-app2:{tag}",
+    "python public/commands/docker_command.py",
     # Kubernetes
     "kubectl apply -f php/project_root/kubernetes/config.yaml",
     "kubectl apply -f php/project_root/kubernetes/php-deployment.yaml",
