@@ -12,7 +12,7 @@ current_directory_back = os.path.dirname(os.path.abspath(__file__))
 # Construct the relative path to the yaml file and PHP docker file
 config_file_path = os.path.normpath(os.path.join(current_directory_back, "../../php/project_root/kubernetes/config.yaml"))
 php_docker_file_path = os.path.normpath(os.path.join(current_directory_back, "../../php/project_root/php"))
-colors_path = os.path.normpath(os.path.join(current_directory_back, "../"))
+colors_path = os.path.normpath(os.path.join(current_directory_back, "../dependencies"))
 from dependencies import colors
 print(f"{colors.Colors.RED} test {colors.Colors.RESET}")
 
