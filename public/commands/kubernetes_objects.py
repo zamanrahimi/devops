@@ -1,6 +1,14 @@
 import os
 import yaml
 import csv
+import sys 
+
+
+# Get the absolute path to the current script
+current_directory_back = os.path.dirname(os.path.abspath(__file__))
+kubernetes_folder_path = os.path.normpath(os.path.join(current_directory_back, "../../php/project_root/kubernetes"))
+csv_file_path = os.path.normpath(os.path.join(current_directory_back, "../dependencies/csv/kubernetes_objects.csv"))
+
 
 def get_object_info(yaml_content):
     metadata = yaml_content.get('metadata', {})
@@ -31,10 +39,7 @@ def list_kubernetes_objects(folder_path, csv_file_path):
                 file_path = os.path.join(folder_path, filename)
                 process_yaml_file(file_path, csv_writer)
 
-# Specify the folder containing your Kubernetes YAML files
-kubernetes_folder_path = "../../php/project_root/kubernetes"
-# Specify the CSV file path to save the results
-csv_file_path = "../dependencies/csv/kubernetes_objects.csv"
+
 
 # List Kubernetes objects and save to CSV
 list_kubernetes_objects(kubernetes_folder_path, csv_file_path)
