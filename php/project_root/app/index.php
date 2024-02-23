@@ -1,9 +1,11 @@
-<h2>Version: v2.25</h2>
+<h2>Version: v2.26</h2>
 <?php
 
 
 $db = getenv('MYSQL_DATABASE');
-echo $db;
+$db1= $_ENV["MYSQL_DATABASE"];
+echo $db1;
+
 exit;
 
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
