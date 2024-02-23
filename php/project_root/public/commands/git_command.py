@@ -7,8 +7,7 @@ import os
 # Get the absolute path to the current script
 current_directory = os.path.dirname(os.path.abspath(__file__))
 # Construct the relative path to the yaml file
-yaml_file_path = os.path.join(current_directory, "../../kubernetes/config.yaml")
-
+yaml_file_path = os.path.normpath(os.path.join(current_directory, "../../kubernetes/config.yaml"))
 
 import subprocess as sb
 import yaml
