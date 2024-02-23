@@ -8,19 +8,20 @@ with open("kubernetes/config.yaml", "r") as t:
     tag = data["data"]["IMAGE_TAG"]
 
 commands = [
-    # testing
-    "python ../../test.py",
+    # Testing
     "black apply.py",
     # Docker
     f"docker build -t zamanrahimi1368/php-app2:{tag} ./php",
     f"docker push zamanrahimi1368/php-app2:{tag}",
-    # kubernetes
+    # Kubernetes
     "kubectl apply -f kubernetes/config.yaml",
     "kubectl apply -f kubernetes/php-deployment.yaml",
     f"kubectl set image deployment/php-app-deployment-v2 php-app-container=zamanrahimi1368/php-app2:{tag}",
     "kubectl apply -f kubernetes/mysql-deployment.yaml",
     "kubectl apply -f kubernetes/persistent-volume.yaml",
     "kubectl apply -f kubernetes/php-service.yaml",
+    # Github
+    "python ../../git_commands.py",
 ]
 for command in commands:
     try:
