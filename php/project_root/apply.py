@@ -20,6 +20,7 @@ commands = [
     "python public/commands/docker_command.py",
     # Kubernetes
     "kubectl apply -f kubernetes/config.yaml",
+    "kubectl apply -f kubernetes/secret.yaml",
     "kubectl apply -f kubernetes/php-deployment.yaml",
     f"kubectl set image deployment/php-app-deployment-v2 php-app-container=zamanrahimi1368/php-app2:{tag}",
     "kubectl apply -f kubernetes/mysql-deployment.yaml",

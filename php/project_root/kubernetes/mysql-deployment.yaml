@@ -18,8 +18,14 @@ spec:
         env:
         - name: ALLOW_EMPTY_PASSWORD
           value: "yes"
+        # - name: MYSQL_DATABASE
+        #   value: "db2"
         - name: MYSQL_DATABASE
-          value: "db2"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_DATABASE
+
         ports:
         - containerPort: 3306
         volumeMounts:
