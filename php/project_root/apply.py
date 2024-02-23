@@ -15,7 +15,7 @@ with open("kubernetes/config.yaml", "r") as t:
 
 commands = [
     # Testing
-    "black apply.py",
+    "black test/format_code.py",
     # Docker
     "python public/commands/docker_command.py",
     # Kubernetes
