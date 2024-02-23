@@ -22,7 +22,7 @@ with open(f"{config_file_path}", "r") as t:
 
 commands = [
     # list of commands
-    f"docker build -t zamanrahimi1368/php-app2:{tag} ../../php/project_root/php",
+    f"docker build -t zamanrahimi1368/php-app2:{tag} {two_directory_back}../../php/project_root/php",
     f"docker push zamanrahimi1368/php-app2:{tag}",
 
 ]
