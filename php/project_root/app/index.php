@@ -1,9 +1,9 @@
-<h2>Version: v2.19</h2>
+<h2>Version: v2.20</h2>
 <?php
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
 $username = "root";
 $password = "";
-$database = "db23";
+$database = "db24";
 $port = 3306;
 
 // Create connection
