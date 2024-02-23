@@ -39,7 +39,7 @@ for command in commands:
         )
 
         print(
-            f" {color.Colors.GREEN} {command} exected successfully {color.Colors.RESET} \n"
+            f" {color.Colors.GREEN} ( {command} ) exected successfully {color.Colors.RESET} \n"
         )
 
         count += 1
