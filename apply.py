@@ -46,5 +46,5 @@ for command in commands:
 
     except sb.CalledProcessError as e:
         print(
-            f" {color.Colors.RED} The error for command {command} is {e} {color.Colors.RESET}"
+            f" {color.Colors.RED} The error for command ( {command} ) is {e} {color.Colors.RESET}"
         )
