@@ -1,10 +1,14 @@
 import subprocess as sb
 import yaml
+import sys
 
+# one folder back 
+sys.path.append('../')
+from colors import Colors
 # get absolute git_command.py path
 
 import os
-
+print(f"{Colors.RED} test {Colors.RESET}")
 # Get the absolute path to the current script
 two_directory_back = os.path.dirname(os.path.abspath(__file__))
 
