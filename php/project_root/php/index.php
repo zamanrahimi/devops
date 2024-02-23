@@ -1,4 +1,4 @@
-<h2>Version: v2.11</h2>
+<h2>Version: v2.12</h2>
 <?php
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
 $username = "root";
