@@ -4,11 +4,13 @@ import yaml
 # get absolute git_command.py path
 
 import os
+
 # Get the absolute path to the current script
 two_directory_back = os.path.dirname(os.path.abspath(__file__))
-# Construct the relative path to the yaml file
-config_file_path = os.path.join(two_directory_back, "../../php/project_root/kubernetes/config.yaml")
-php_docker_file_path = os.path.join(two_directory_back, "../../php/project_root/php")
+
+# Construct the relative path to the yaml file and PHP docker file
+config_file_path = os.path.normpath(os.path.join(two_directory_back, "../../php/project_root/kubernetes/config.yaml"))
+php_docker_file_path = os.path.normpath(os.path.join(two_directory_back, "../../php/project_root/php"))
 
 # docker build -t zamanrahimi1368/php-app2:v2.9 ../../php/project_root/php
 
@@ -22,7 +24,7 @@ with open(f"{config_file_path}", "r") as t:
 
 commands = [
     # list of commands
-    f"docker build -t zamanrahimi1368/php-app2:{tag} {two_directory_back}../../php/project_root/php",
+    f"docker build -t zamanrahimi1368/php-app2:{tag} {php_docker_file_path}",
     f"docker push zamanrahimi1368/php-app2:{tag}",
 
 ]
