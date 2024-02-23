@@ -14,8 +14,11 @@ config_file_path = os.path.normpath(os.path.join(current_directory_back, "../../
 php_docker_file_path = os.path.normpath(os.path.join(current_directory_back, "../../php/project_root/php"))
 
 # import dependiencies 
-sys.path.append(sys.path.join(current_directory_back, '../'))
+current_directory_back = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(current_directory_back, '..'))
+
 from dependencies import colors
+
 print(f"{colors.Colors.RED} test {colors.Colors.RESET}")
 
 
