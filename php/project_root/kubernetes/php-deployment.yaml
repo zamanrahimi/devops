@@ -14,6 +14,13 @@ spec:
     spec:
       containers:
       - name: php-app-container
-        image: zamanrahimi1368/php-app2:v5
+        image: zamanrahimi1368/php-app2
+        # env:
+        # - name: IMAGE_TAG
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: php-app-config
+        #       key: IMAGE_TAG
+
         ports:
         - containerPort: 80

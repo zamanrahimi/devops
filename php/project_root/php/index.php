@@ -1,3 +1,4 @@
+<h2>Version: v2.1</h2>
 <?php
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
 $username = "root";
@@ -25,7 +26,7 @@ if ($result->num_rows > 0) {
     // Output data of each row
     echo "<ul>";
     while($row = $result->fetch_assoc()) {
-        echo "<li>ID: " . $row["id"]. " - Name: " . $row["name"]. "</li>";
+        echo "<li>IDs: " . $row["id"]. " - Name: " . $row["name"]. "</li>";
     }
     echo "</ul>";
 } else {
