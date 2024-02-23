@@ -33,14 +33,16 @@ print(
     f"{colors.Colors.BLUE}----------------Test Part------------------------{colors.Colors.RESET}"
 )
 commands = [
-    # testing
+    # code format / list all of your files
     "black ../apply.py",
+    # static vulnerability testing
+    "pylint ../apply.py",
 ]
 for command in commands:
     try:
         sb.run(command, check=True, shell=True)
         print(
-            f"{colors.Colors.GREEN}----------------Test success commends------------------------{colors.Colors.RESET}"
+            f"{colors.Colors.GREEN}--------Test success commends---------{colors.Colors.RESET}"
         )
         print(
             f"{colors.Colors.GREEN} ({command}) exected successfully {colors.Colors.RESET} \n"

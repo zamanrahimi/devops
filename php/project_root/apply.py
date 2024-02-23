@@ -16,7 +16,7 @@ with open("kubernetes/config.yaml", "r") as t:
 commands = [
     
     # Testing
-    "black test/format_code.py",
+    "black test/unit_test.py",
 
     # Docker
     "python public/commands/docker_command.py",
@@ -41,7 +41,7 @@ for command in commands:
         # execute main command
         sb.run(command, check=True, shell=True)
         print(
-            f"{color.Colors.BLUE}----------------Command {command} ------------------------ {color.Colors.RESET}"
+            f"{color.Colors.BLUE}----------Command {command} ---------- {color.Colors.RESET}"
         )
 
         print(
