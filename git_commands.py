@@ -3,6 +3,8 @@ import yaml
 
 
 # read variable from yaml file
+# it should not be like php/project_root/kubernetes/config.yaml. suppose 
+# it is runn from apply.py directory 
 with open("php/project_root/kubernetes/config.yaml", "r") as t:
     data = yaml.safe_load(t)
     tag = data["data"]["IMAGE_TAG"]
@@ -10,7 +12,7 @@ with open("php/project_root/kubernetes/config.yaml", "r") as t:
 commands = [
     # testing
     "git add .",
-    "git commit -m '.{tag}.'",
+    f"git commit -m '.{tag}.'",
     "git push",
 
 ]
