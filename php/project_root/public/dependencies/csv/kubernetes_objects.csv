@@ -6,3 +6,4 @@ PersistentVolume,mysql-pv
 PersistentVolumeClaim,mysql-pvc
 Deployment,php-app-deployment-v2
 Service,php-app-service-v2
+Secret,mysql-secret
