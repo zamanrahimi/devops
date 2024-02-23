@@ -1,19 +1,11 @@
-<h2>Version: v2.27</h2>
+<h2>Version: v2.28</h2>
 <?php
 
-
-
-print_r($_ENV);
-$db = $_ENV["MYSQL_DATABASE"] ?? "not set";
-echo $db;
-$db = getenv('MYSQL_DATABASE');
-echo $db;
-exit;
 
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
 $username = "root";
 $password = "";
-$database = $decodedDatabaseName;
+$database = "db2";
 $port = 3306;
 
 // Create connection
