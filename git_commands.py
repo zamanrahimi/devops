@@ -12,7 +12,7 @@ with open("php/project_root/kubernetes/config.yaml", "r") as t:
 commands = [
     # testing
     "git add .",
-    f"git commit -m '.{tag}.'",
+    f'git commit -m "Current application version: {tag}"',
     "git push",
 
 ]
