@@ -27,6 +27,9 @@ commands = [
     "kubectl apply -f php/project_root/kubernetes/php-service.yaml",
     # Github
     "python public/commands/git_command.py",
+    # less import comments
+    # lsit of kubernetes objects
+    "python public/commands/kubernetes_objects.py",
 ]
 
 
