@@ -3,7 +3,7 @@
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
 $username = "root";
 $password = "";
-$database = "db2";
+$database = "db23";
 $port = 3306;
 
 // Create connection
