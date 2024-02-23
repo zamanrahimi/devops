@@ -34,7 +34,7 @@ for command in commands:
     try:
         sb.run(command, check=True, shell=True)
         print(
-            f" {color.Colors.RED} The command {command} exected successfully {color.Colors.RESET} \n"
+            f" {color.Colors.GREEN} The command {command} exected successfully {color.Colors.RESET} \n"
         )
         print(f"----------------Command {count} ------------------------")
         count += 1
