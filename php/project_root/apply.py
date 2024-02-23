@@ -7,21 +7,10 @@ with open("kubernetes/config.yaml", "r") as t:
     data = yaml.safe_load(t)
     tag = data["data"]["IMAGE_TAG"]
 
-
-w = "../../"
-git_add_command = [
-    "git add .",
-    f"git commit -m '.{tag}.'",
-    "git push",
-]
-
-
 commands = [
     # testing
+    "python ../../test.py",
     "black apply.py",
-    *git_add_command,
-    # "cd ../.. git commit -m '. Current application verison: {tag}.'",
-    # "cd ../.. git push",
     # Docker
     f"docker build -t zamanrahimi1368/php-app2:{tag} ./php",
     f"docker push zamanrahimi1368/php-app2:{tag}",
@@ -33,14 +22,10 @@ commands = [
     "kubectl apply -f kubernetes/persistent-volume.yaml",
     "kubectl apply -f kubernetes/php-service.yaml",
 ]
-for command, git_add_command in zip(commands, git_add_command):
+for command in commands:
     try:
-        if git_add_command in command:
-            sb.run(command, check=True, shell=True, cwd=w)
-        else:
-            sb.run(command, check=True, shell=True)
-        print(f"The command {command} executed successfully \n")
+        sb.run(command, check=True, shell=True)
+        print(f"The command {command} exected successfully \n")
         print("----------------Command------------------------")
-
     except sb.CalledProcessError as e:
         print(f"The error is {e}")
