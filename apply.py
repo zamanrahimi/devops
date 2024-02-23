@@ -35,11 +35,13 @@ for command in commands:
         # execute main command
         sb.run(command, check=True, shell=True)
         print(
-            f" {color.Colors.GREEN} The command {command} exected successfully {color.Colors.RESET} \n"
-        )
-        print(
             f"{color.Colors.BLUE}----------------Command {count} ------------------------ {color.Colors.RESET}"
         )
+
+        print(
+            f" {color.Colors.GREEN} {command} exected successfully {color.Colors.RESET} \n"
+        )
+
         count += 1
 
     except sb.CalledProcessError as e:
