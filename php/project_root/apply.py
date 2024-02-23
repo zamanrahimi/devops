@@ -14,8 +14,10 @@ with open("kubernetes/config.yaml", "r") as t:
     tag = data["data"]["IMAGE_TAG"]
 
 commands = [
+    
     # Testing
     "black test/format_code.py",
+
     # Docker
     "python public/commands/docker_command.py",
     # Kubernetes
