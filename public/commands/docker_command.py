@@ -26,7 +26,7 @@ from dependencies import colors
 with open(f"{config_file_path}", "r") as t:
     data = yaml.safe_load(t)
     tag = data["data"]["IMAGE_TAG"]
-
+print(f"{colors.Colors.GREEN}----------------Docker Commands------------------------{colors.Colors.RESET}")
 commands = [
     # list of commands
     f"docker build -t zamanrahimi1368/php-app2:{tag} {php_docker_file_path}",
