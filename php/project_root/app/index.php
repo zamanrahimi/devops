@@ -1,9 +1,14 @@
-<h2>Version: v2.20</h2>
+<h2>Version: v2.21</h2>
 <?php
+
+// calling dbname as base64
+$mysqlDatabaseName = $_ENV['MYSQL_DATABASE'];
+$decodedDatabaseName = base64_decode($mysqlDatabaseName);
+
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
 $username = "root";
 $password = "";
-$database = "db24";
+$database = decodedDatabaseName;
 $port = 3306;
 
 // Create connection
