@@ -27,7 +27,7 @@ commands = [
     "kubectl apply -f php/project_root/kubernetes/persistent-volume.yaml",
     "kubectl apply -f php/project_root/kubernetes/php-service.yaml",
     # Github
-    "python public/commands/git_commands.py",
+    "python public/commands/git_command.py",
 ]
 
 count = 1
