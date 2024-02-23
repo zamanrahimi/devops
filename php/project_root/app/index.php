@@ -1,9 +1,18 @@
-<h2>Version: v2.21</h2>
+<h2>Version: v2.22</h2>
 <?php
 
 // calling dbname as base64
-$mysqlDatabaseName = $_ENV['MYSQL_DATABASE'];
-$decodedDatabaseName = base64_decode($mysqlDatabaseName);
+$mysqlDatabaseName = $_ENV['MYSQL_DATABASE'] ?? null;
+
+if ($mysqlDatabaseName === null) {
+    die('Error: MYSQL_DATABASE environment variable is not set.');
+}
+
+$decodedDatabaseName = base64_decode((string)$mysqlDatabaseName);
+
+if ($decodedDatabaseName === false) {
+    die('Error decoding MYSQL_DATABASE value.');
+}
 
 $servername = "mysql-service";  // The name of the MySQL service in your Kubernetes cluster
 $username = "root";
