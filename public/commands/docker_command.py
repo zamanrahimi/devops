@@ -15,11 +15,7 @@ php_docker_file_path = os.path.normpath(os.path.join(current_directory_back, "..
 
 # import dependiencies 
 sys.path.append(os.path.join(current_directory_back, '..'))
-
 from dependencies import colors
-
-print(f"{colors.Colors.RED} test {colors.Colors.RESET}")
-
 
 # docker build -t zamanrahimi1368/php-app2:v2.9 ../../php/project_root/php
 
@@ -40,7 +36,9 @@ commands = [
 for command in commands:
     try:
         sb.run(command, check=True, shell=True)
-        print(f"The command222222222222222222222222222222 {command} exected successfully \n")
-        print("----------------Command------------------------")
+        print(f"{colors.Colors.GREEN}----------------Command------------------------{colors.Colors.RESET}")
+        print(f" ({command}) exected successfully \n")
+
     except sb.CalledProcessError as e:
-        print(f"The error is {e}")
+        print(f"{colors.Colors.RED}----------------Command------------------------{colors.Colors.RESET}")
+        print(f"{colors.Colors.RED} The error is {e} {colors.Colors.RESET}")
