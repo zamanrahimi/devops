@@ -31,11 +31,15 @@ spec:
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /bitnami/mysql/data
+   
 
       volumes:  # This should be at the same indentation level as containers
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pvc
+      - name: php-app-config
+        configMap:
+          name: php-app-config
 ---
 apiVersion: v1
 kind: Service
