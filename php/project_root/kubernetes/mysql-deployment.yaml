@@ -18,37 +18,21 @@ spec:
         env:
         - name: ALLOW_EMPTY_PASSWORD
           value: "yes"
-        # - name: MYSQL_DATABASE
-        #   value: "db2"
         - name: MYSQL_DATABASE
           valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-              key: MYSQL_DATABASE
-
+            configMapKeyRef:
+              name: php-app-config
+              key: schema.sql # Use the schema.sql from the ConfigMap
         ports:
         - containerPort: 3306
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /bitnami/mysql/data
-   
 
-      volumes:  # This should be at the same indentation level as containers
+      volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pvc
       - name: php-app-config
         configMap:
           name: php-app-config
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql-service
-spec:
-  selector:
-    app: mysql2
-  ports:
-  - protocol: TCP
-    port: 3306
-    targetPort: 3306
