@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: php-app-config
 data:
-  IMAGE_TAG: "v2.28"
+  IMAGE_TAG: "v2.29"
   schema.sql: |
     CREATE TABLE empt (
       id INT,
