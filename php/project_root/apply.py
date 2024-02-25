@@ -33,6 +33,9 @@ commands = [
     # less import comments
     # lsit of kubernetes objects
     "python public/commands/kubernetes_objects.py",
+
+    # Get URL 
+    "python public/commands/get_url.py",
 ]
 
 
