@@ -1,8 +1,8 @@
 object_type,object_name
 ConfigMap,php-app-config
 Deployment,mysql-deployment2
-Service,mysql-service
 PersistentVolume,mysql-pv
 PersistentVolumeClaim,mysql-pvc
 Deployment,php-app-deployment-v2
 Service,php-app-service-v2
+Secret,mysql-secret

@@ -7,8 +7,7 @@ import os
 # Get the absolute path to the current script
 current_directory = os.path.dirname(os.path.abspath(__file__))
 # Construct the relative path to the yaml file
-yaml_file_path = os.path.join(current_directory, "../../php/project_root/kubernetes/config.yaml")
-
+yaml_file_path = os.path.normpath(os.path.join(current_directory, "../../kubernetes/config.yaml"))
 
 import subprocess as sb
 import yaml
@@ -22,7 +21,7 @@ sys.path.append(os.path.join(current_directory, '..'))
 from dependencies import colors
 
 # read variable from yaml file
-# it should not be like php/project_root/kubernetes/config.yaml. suppose 
+# it should not be like/kubernetes/config.yaml. suppose 
 # it is runn from apply.py directory 
 with open(f"{yaml_file_path}", "r") as t:
     data = yaml.safe_load(t)

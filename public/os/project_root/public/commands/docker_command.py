@@ -10,18 +10,18 @@ import os
 current_directory_back = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the relative path to the yaml file and PHP docker file
-config_file_path = os.path.normpath(os.path.join(current_directory_back, "../../php/project_root/kubernetes/config.yaml"))
-php_docker_file_path = os.path.normpath(os.path.join(current_directory_back, "../../php/project_root/app"))
+config_file_path = os.path.normpath(os.path.join(current_directory_back, "../../kubernetes/config.yaml"))
+php_docker_file_path = os.path.normpath(os.path.join(current_directory_back, "../../app"))
 
 # import dependiencies 
 sys.path.append(os.path.join(current_directory_back, '..'))
 from dependencies import colors
 
-# docker build -t zamanrahimi1368/php-app2:v2.9 ../../php/project_root/php
+# docker build -t zamanrahimi1368/php-app2:v2.9 ../../php
 
 
 # read variable from yaml file
-# it should not be like php/project_root/kubernetes/config.yaml. suppose 
+# it should not be like kubernetes/config.yaml. suppose 
 # it is runn from apply.py directory 
 with open(f"{config_file_path}", "r") as t:
     data = yaml.safe_load(t)

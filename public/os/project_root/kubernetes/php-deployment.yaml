@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-app-deployment-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-app-v2
+  template:
+    metadata:
+      labels:
+        app: php-app-v2
+    spec:
+      containers:
+      - name: php-app-container
+        image: zamanrahimi1368/php-app2
+        # env:
+        # - name: IMAGE_TAG
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: php-app-config
+        #       key: IMAGE_TAG
+
+        ports:
+        - containerPort: 80

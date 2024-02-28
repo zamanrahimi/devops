@@ -6,7 +6,7 @@ import sys
 
 # Get the absolute path to the current script
 current_directory_back = os.path.dirname(os.path.abspath(__file__))
-kubernetes_folder_path = os.path.normpath(os.path.join(current_directory_back, "../../php/project_root/kubernetes"))
+kubernetes_folder_path = os.path.normpath(os.path.join(current_directory_back, "../../kubernetes"))
 csv_file_path = os.path.normpath(os.path.join(current_directory_back, "../dependencies/csv/kubernetes_objects.csv"))
 
 
