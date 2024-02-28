@@ -1,5 +1,5 @@
 import subprocess as sb
-version = "v1.19"
+version = "v1.26"
 commands = [
 
     f"docker build -t zamanrahimi1368/redhat_custom_version:{version} .",

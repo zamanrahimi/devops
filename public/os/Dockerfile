@@ -46,8 +46,8 @@ RUN aws --version
 # Add Docker's official GPG key
 RUN yum install -y yum-utils
 RUN sudo yum update -y
-RUN sudo yum install -y docker
-RUN sudo yum install -y initscripts
+# RUN sudo yum install -y docker
+# RUN sudo yum install -y initscripts
 
 
 # RUN yum-config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
@@ -62,5 +62,19 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/$(wget -qO- h
 # optional  
 
 COPY project_root /home/project_root
+COPY aws/list-user.py /home
 
 
+COPY aws/comment.sh /home
+WORKDIR /home
+RUN chmod +x comment.sh
+RUN ./comment.sh
+
+# terraform 
+COPY aws/credentials.sh /home
+WORKDIR /home
+RUN chmod +x credentials.sh
+RUN ./credentials.sh
+
+
+COPY terraform/main.tf /home
