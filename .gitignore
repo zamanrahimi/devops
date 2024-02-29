@@ -1,4 +1,7 @@
 public/os/aws/credentials.py
 public/os/aws/credentials.sh
 
-public/os/terraform/*
+public/os/terraform/*.tfstate
+public/os/terraform/*.tfstate.backup
+public/os/terraform/*.tfvars
+public/os/terraform/.terraform
