@@ -32,6 +32,9 @@ commands = [
     # c_build / repo 
     "python c_build/repo/repo.py",
 
+    # c_build / ci_server 
+    # Note: comment it if create is created before, otherwise, it encounter error
+    "python c_build/ci_server/jenkins_command.py",
 ]
 
 for command in commands:
